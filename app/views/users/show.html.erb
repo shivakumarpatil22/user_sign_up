@@ -1,0 +1,11 @@
+<h1>Users#show</h1>
+<p><%= notice %></p>
+<p> Name: <%=@user.name %></p>
+<p> Email: <%=@user.email %></p>
+<p> Password: <%=@user.password %></p>
+<p> Gender: <%=@user.gender %></p>
+<p> Company: <%=@user.company %></p>
+
+
+<%= link_to "Edit",  edit_user_path(@user.id) %>
+<%= link_to "link to users page", user_path %>

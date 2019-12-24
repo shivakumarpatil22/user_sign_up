@@ -1,0 +1,72 @@
+<div class="mainContent">
+  <div class="grid">
+    <h2 class="largeHeader">Sign up</h2>
+    <p class="centeredDescription col_4">Already signed up? You can <a href="">log in here.</a></p>
+    <div class="col_1">
+      <!-- <form class="UserForm"> -->
+
+        <%= form_with(model: user, local: true) do |form|%>
+            <% if user.errors.any? %>
+            <div id="error_explanation">
+            <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <ul>
+        <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
+        <label for="I am a">I am a</label>
+        <input type="radio" name="gender" value="Professional" checked> Professional
+        <input type="radio" name="gender" value="Student">Student<br><br>
+        
+        <label for="name">Full name: </label>
+        <input class="shortInput" id="name" type="text" placeholder="Enter full name" ><br><br>
+
+        <label for="email">Email:</label>
+        <input class="shortInput" type="email" class="form-control" id="email" placeholder="Enter email" name="email"><br><br>
+
+        <label for="password">Password: </label>
+        <input class="shortInput" id="password" type="password" placeholder="Enter password" ><br><br>
+
+        <label for="sel1">Gender:</label>
+        <select class="shortInput" class="form-control" id="sel1" placeholder="Select Gender">
+          <option>Male</option>
+          <option>Female</option>
+        </select><br><br>
+
+        <label for="company">Company:</label>
+        <input class="shortInput" id="company" type="company" placeholder="Enter company" ><br><br>
+
+        <label for="skills">Skills I Know: </label>
+        <input class="shortInput" id="skills" type="skills" placeholder="Enter your skills"><br><br>
+
+            <div class="form-group form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="remember"> By signing up, you agree to our Terms and conditions
+      </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Signup</button>
+</body>
+</html>
+
+
+<!-- <div class ="field">
+<%= form.label :first_name %>
+<%= form.text_field :first_name %>
+ </div>
+<div class ="field">
+<%= form.label :first_name_confirmation %>
+<%= form.text_field :first_name_confirmation %>
+ </div>
+ <div class ="field">
+<%= form.label :last_name %>
+<%= form.text_field :last_name %>
+ </div>
+<div class ="field">
+<%= form.label :dob %>
+<%= form.text_field :dob %>
+ </div>
+ <%= form.submit %> -->
+<% end %>
