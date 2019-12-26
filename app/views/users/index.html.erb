@@ -1,7 +1,6 @@
 <div class="container">
   <h2>Users</h2>
   <%= link_to "New", new_user_path %>
-  <%= will_paginate @user%>
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -26,6 +25,7 @@
         <td><%= link_to "Destroy", user, method: :delete, data: { confirm: 'Are you sure?' } %></td> 
       </tr>
       <%end%>
+      <%= will_paginate @user%>
     </tbody>
   </table>
 </div>

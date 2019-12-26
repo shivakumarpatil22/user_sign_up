@@ -3,7 +3,7 @@
     <h2 class="largeHeader">Sign up</h2>
     <p class="centeredDescription col_4">Already signed up? You can <a href="">log in here.</a></p>
     <div class="col_1">
-      <!-- <form class="UserForm"> -->
+      <form class="UserForm">
 
         <%= form_with(model: user, local: true) do |form|%>
             <% if user.errors.any? %>
@@ -16,57 +16,46 @@
       </ul>
     </div>
 <% end %>
-
+<!-- 
         <label for="I am a">I am a</label>
-        <input type="radio" name="gender" value="Professional" checked> Professional
-        <input type="radio" name="gender" value="Student">Student<br><br>
-        
+        <input type="radio" name="user[gender]" value="Professional" checked> Professional
+        <input type="radio" name="user[gender]" value="Student">Student<br><br> -->
+
+        <div class="form-group">
         <label for="name">Full name: </label>
-        <input class="shortInput" id="name" type="text" placeholder="Enter full name" ><br><br>
+        <input class="shortInput" form-control name="user[name]" value="<%= @user.name%>" id="name" type="text" placeholder="Enter full name"></div>
 
+        <div class="form-group">
         <label for="email">Email:</label>
-        <input class="shortInput" type="email" class="form-control" id="email" placeholder="Enter email" name="email"><br><br>
+        <input class="shortInput" type="email" class="form-control" id="email" value="<%= @user.email%>" placeholder="Enter email" name="user[email]"></div>
 
+        <div class="form-group">
         <label for="password">Password: </label>
-        <input class="shortInput" id="password" type="password" placeholder="Enter password" ><br><br>
+        <input class="shortInput" id="password" name="user[password]" type="password" value="<%= @user.password%>" placeholder="Enter password" ></div>
 
+        <div class="form-group">
         <label for="sel1">Gender:</label>
-        <select class="shortInput" class="form-control" id="sel1" placeholder="Select Gender">
+        <select class="shortInput" name="user[gender]" id="sel1" placeholder="Select Gender">
           <option>Male</option>
           <option>Female</option>
-        </select><br><br>
+        </select></div>
 
+        <div class="form-group">
         <label for="company">Company:</label>
-        <input class="shortInput" id="company" type="company" placeholder="Enter company" ><br><br>
+        <input class="shortInput" id="company" type="company" name="user[company]" value="<%= @user.company%>" placeholder="Enter company" ></div>
 
+        <div class="form-group">
         <label for="skills">Skills I Know: </label>
-        <input class="shortInput" id="skills" type="skills" placeholder="Enter your skills"><br><br>
+        <input class="shortInput" id="skills" type="skills" name="user[skills]" value="<%= @user.skills%>" placeholder="Enter your skills"></div>
 
-            <div class="form-group form-check">
-      <label class="form-check-label">
+        <div class="form-group form-check">
+        <label class="form-check-label">
         <input class="form-check-input" type="checkbox" name="remember"> By signing up, you agree to our Terms and conditions
-      </label>
-    </div>
-    <button type="submit" class="btn btn-primary">Signup</button>
+        </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Signup</button>
 </body>
 </html>
 
-
-<!-- <div class ="field">
-<%= form.label :first_name %>
-<%= form.text_field :first_name %>
- </div>
-<div class ="field">
-<%= form.label :first_name_confirmation %>
-<%= form.text_field :first_name_confirmation %>
- </div>
- <div class ="field">
-<%= form.label :last_name %>
-<%= form.text_field :last_name %>
- </div>
-<div class ="field">
-<%= form.label :dob %>
-<%= form.text_field :dob %>
- </div>
- <%= form.submit %> -->
 <% end %>
