@@ -5,7 +5,16 @@
 <p> Password: <%=@user.password %></p>
 <p> Gender: <%=@user.gender %></p>
 <p> Company: <%=@user.company %></p>
+<p> Age: <%=user.age %></p>
 
 
-<%= link_to "Edit",  edit_user_path(@user.id) %>
-<%= link_to "link to users page", users_path %>
+<%= link_to(edit_user_path(@user.id)) do %>
+  <button type="submit" class="btn btn-primary", value="<%edit_user_path(@user.id)%>">Edit</button>
+<% end %>
+
+
+<%= link_to(users_path) do %>
+ <button type="submit" class="btn btn-primary", value="<%= users_path%>">Redirect to Users Page</button>
+<% end %>
+
+<%= link_to "Redirect to user page", users_path, class: "btn btn-primary" %>

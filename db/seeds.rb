@@ -7,4 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-10.times { User.create(name:Faker::Name.name, email:Faker::Internet.email, company:Faker::Team.name) }
+10.times { User.create(name:Faker::Name.name, email:Faker::Internet.email, company:Faker::Team.name, dob:"1980") }

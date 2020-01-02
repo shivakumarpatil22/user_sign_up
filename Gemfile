@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
-gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate-bootstrap4'
 gem 'factory_bot', '~> 5.0', '>= 5.0.2'
 gem 'faker', '~> 1.9', '>= 1.9.3'
 

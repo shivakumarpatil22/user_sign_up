@@ -1,21 +1,23 @@
-<div class="mainContent">
+<!-- <div class="mainContent">
   <div class="grid">
     <h2 class="largeHeader">Sign up</h2>
     <p class="centeredDescription col_4">Already signed up? You can <a href="">log in here.</a></p>
-    <div class="col_1">
-      <form class="UserForm">
+    <div class="col_1"> -->
+      <!-- <form class="UserForm"> -->
+<h2 class="largeHeader">Sign up</h2>
 
-        <%= form_with(model: user, local: true) do |form|%>
-            <% if user.errors.any? %>
-            <div id="error_explanation">
-            <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-      <ul>
-        <% user.errors.full_messages.each do |message| %>
+<%= form_with(model: user, local: true) do |form|%>
+    <% if user.errors.any? %>
+    <div id="error_explanation">
+    <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<ul>
+    <% user.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
     </div>
 <% end %>
+
 <!-- 
         <label for="I am a">I am a</label>
         <input type="radio" name="user[gender]" value="Professional" checked> Professional
@@ -55,7 +57,5 @@
         </div>
 
         <button type="submit" class="btn btn-primary">Signup</button>
-</body>
-</html>
 
 <% end %>
